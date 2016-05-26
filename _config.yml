@@ -9,7 +9,7 @@
 title: Maxemilian Grönblom
 email: maxemilian@maxemiliang.me
 description: > # this means to ignore newlines until "baseurl:"
- a 17 years old webdev student enjoying life and ready to take on challenges
+ a webdev student enjoying life and ready to take on challenges
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://maxemiliang.me" # the base hostname & protocol for your site
 twitter_username: maxemiliang
