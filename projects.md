@@ -20,4 +20,7 @@ permalink: /projects/
 
 {% endif %}
 {% endfor %}
+
+<p>And more to be added soon!</p>
+
 </div>
