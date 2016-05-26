@@ -21,6 +21,7 @@ permalink: /projects/
 {% endif %}
 {% endfor %}
 <br>
+<br>
 <p>And more to be added soon!</p>
 
 </div>
