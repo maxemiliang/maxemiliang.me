@@ -1,5 +1,3 @@
-node_modules
-.tmp
+_site
 .sass-cache
-bower_components
-test/bower_components
+.jekyll-metadata
