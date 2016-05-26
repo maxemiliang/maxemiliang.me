@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "BK46.fi"
+date:   2016-05-26 16:02:00 +0300
+categories: portfolio projects site
+projects: 1
+---
+<p>My first real project,
+this is a site for a local football team, made in wordpress for simplicity</p>
+
+
+[Visit site >>](http://bk46.fi)

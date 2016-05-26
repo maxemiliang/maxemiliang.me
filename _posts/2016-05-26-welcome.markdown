@@ -3,6 +3,7 @@ layout: post
 title:  "The portfolio is live!"
 date:   2016-05-26 16:02:00 +0300
 categories: portfolio update
+projects: 0
 ---
 My portfolio is live and working!
 
