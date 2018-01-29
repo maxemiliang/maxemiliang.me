@@ -4,8 +4,12 @@ layout: default
 
 <div class="home">
 
+  <header class="post-header">
+    <h3 class="post-title">News</h1>
+  </header>
 
   {% for post in site.posts%}
+  {% if post.projects == 0 %}
   <div class="post postContent">
     <div  class="postDate"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
     </div>
@@ -21,7 +25,7 @@ layout: default
     </div>
   </div>
 
-
+  {% endif %}
   {% endfor %}
   <!--<ul class="post-list">
     {% for post in site.posts %}
