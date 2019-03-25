@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'todo-app'
+date: 2018-03-25 20:02:00 +0300
+categories: portfolio projects app
+projects: 1
+img: /img/ms_icon.ico
+---
+
+<p>A project I built using nodeJS and expressJS with redis as a backend.</p>
+<p></p>
+
+<span class="icon icon--github">{% include icon-github.svg %}</span>[Visit Github page >>](https://github.com/maxemiliang/simple-todo-app){:target="\_blank"}
+<br>
+[Test it out here >>](https://todo.app.maxemiliang.cloud){:target="\_blank"}

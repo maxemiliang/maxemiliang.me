@@ -9,6 +9,6 @@ img: /img/ms_icon.ico
 
 <p>A project I built using nodeJS and expressJS with my own implemented autentication system using mysql as a backend database.</p>
 
-<span class="icon icon--github">{% include icon-github.svg %}</span>[Visit Github page >>](https://github.com/maxemiliang/musicsync)
+<span class="icon icon--github">{% include icon-github.svg %}</span>[Visit Github page >>](https://github.com/maxemiliang/musicsync){:target="\_blank"}
 <br>
 [Test it out here >>](https://musicsync.app.maxemiliang.cloud){:target="\_blank"}
