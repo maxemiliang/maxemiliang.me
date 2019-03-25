@@ -11,4 +11,4 @@ img: /img/ms_icon.ico
 
 <span class="icon icon--github">{% include icon-github.svg %}</span>[Visit Github page >>](https://github.com/maxemiliang/musicsync)
 <br>
-[Test it out here >>](https://musicsync.app.maxemiliang.cloud)
+[Test it out here >>](https://musicsync.app.maxemiliang.cloud){:target="\_blank"}
