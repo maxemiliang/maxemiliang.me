@@ -1,0 +1,27 @@
+.animated-bg {
+  width: 0;
+  max-width: 65%;
+  height: 100vw;
+  position: fixed;
+  background-color: $brand-color;
+  z-index: -1;
+}
+
+.hero > .arrow {
+  animation: arrowdown 2s forwards ease-in-out;
+}
+
+@keyframes arrowdown {
+  0% {
+    bottom: calc(100% - 5rem);
+    transform: rotate(180deg);
+    opacity: 0.5;
+  }
+  99% {
+    transform: rotate(0deg);
+  }
+  100% {
+    bottom: 2rem;
+    opacity: 1;
+  }
+}

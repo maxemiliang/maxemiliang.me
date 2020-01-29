@@ -1,0 +1,24 @@
+{
+  "name": "maxemilian_portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "start": "parcel src/index.html",
+    "build-prod": "parcel build src/index.html --public-url ./",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "gh-pages": "^1.2.0",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-sw-precache": "^1.1.1",
+    "sass": "^1.25.0"
+  }
+}
