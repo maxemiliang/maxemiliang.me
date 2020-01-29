@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/arrow-down.b2b63c39.svg","423ec508ae920fef0bc8de056d434017"],["/index.html","2ad19c6e2af1eecc177d5eb65587d3d6"],["/script.a6e1fada.js","20c6e14e6ceb7b68627a22e7b05457d2"],["/service-worker.js","94cb03bdf0b35ee44f7040c1aba8ae69"],["/style.ff1c4cab.css","7285fc33314410798f5f0e09ee46615b"],["/style.ff1c4cab.js","ba4cb97f08207ba9a8007be16913863b"]];
+var precacheConfig = [["/arrow-down.b2b63c39.svg","423ec508ae920fef0bc8de056d434017"],["/index.html","2ad19c6e2af1eecc177d5eb65587d3d6"],["/script.a6e1fada.js","62a6fa3660e57d3aeae8dcc9b33e6346"],["/style.ff1c4cab.css","7285fc33314410798f5f0e09ee46615b"],["/style.ff1c4cab.js","b2e1b2cf2987af9d00d294f7764bce3f"]];
 var cacheName = 'sw-precache-v3-maxemilian_portfolio-' + (self.registration ? self.registration.scope : '');
 
 
