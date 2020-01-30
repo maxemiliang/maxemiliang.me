@@ -1,26 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="styles/style.scss" />
-    <script src="scripts/script.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato|Muli|Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <title>Maxemilian Grönbloms Portfolio</title>
-  </head>
 
-  <body>
-    <div class="animated-bg"></div>
-    <div class="hero first">
-      <h1>Maxemilian Grönblom</h1>
-      <img class="arrow" src="./svg/arrow-down.svg" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles/style.scss" />
+  <script src="scripts/script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Cutive+Mono|Roboto+Mono&display=swap" rel="stylesheet" />
+  <!-- Matomo -->
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+      var u = '//analytics.maxemiliang.cloud/';
+      _paq.push(['setTrackerUrl', u + 'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d = document,
+        g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.type = 'text/javascript';
+      g.async = true;
+      g.defer = true;
+      g.src = u + 'matomo.js';
+      s.parentNode.insertBefore(g, s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+  <title>Maxemilian Grönbloms Portfolio</title>
+</head>
+
+<body>
+  <div class="animated-bg"></div>
+  <nav>
+    <a class="nav-link" data-href="#work">Work</a>
+    <a class="nav-link" data-href="#contact">Contact</a>
+  </nav>
+  <div class="hero first">
+    <h1>
+      Maxemilian <br />
+      Grönblom
+    </h1>
+    <div class="intro">
+      <img src="./img/profile.jpg" alt="Picture of me">
+
+      <p class="intro-text">
+        <span>Hello There!</span>
+        <br />
+        <span>You appear to have stumbled upon my portfolio.</span>
+        <br />
+        <span>Let me introduce myself:</span>
+        <br />
+        <span>My name is</span> <span></span>
+        <span class="bold">Maxemilian</span>
+        <br />
+        <span>I study Computer Science at </span>
+        <br />
+        <span>Åbo Akademi University</span>
+        <br />
+        <span>I also work as a developer at</span>
+        <br />
+        <span class="bold">JCO Digital</span>
+        <br>
     </div>
-    <div class="hero">
-      <h2>Work</h2>
+    </p>
+  </div>
+  <div id="work" class="hero">
+    <h2>My work</h2>
+    <div class="project">
+      <h3>Weatherdash</h3>
+      <p>Weatherdash consists of three main components and one minor component</p>
+      <ul>
+        <li>- API Server (NodeJS/Express)</li>
+        <li>- Sensor software(NodeMCU/PlatformIO/C++)</li>
+        <li>- GUI(Java/JavaFX)</li>
+      </ul>
+      <p></p>
+      <a target="_blank" href="https://git.maxemiliang.cloud/groups/prog3">Repos -></a>
     </div>
-  </body>
+  </div>
+  <div id="contact" class="hero">
+    <h2>Contact</h2>
+  </div>
+  <svg class="arrow directionist">
+    <use href="./svg/arrow-down.svg"></use>
+  </svg>
+  <svg class="arrow directionist light">
+    <use href="./svg/arrow-down-light.svg"></use>
+  </svg>
+
+</body>
+
 </html>

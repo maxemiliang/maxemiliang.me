@@ -14,11 +14,45 @@ h3,
 h4,
 h5,
 h6 {
+  font-size: 2rem;
   font-family: $small-header-font;
+  font-weight: 400;
 }
 
-p {
+p,
+li {
   font-family: $text-font;
+  color: $text-color;
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+span {
+  color: $text-color;
+}
+
+nav {
+  position: fixed;
+  top: 2.5rem;
+  right: 4rem;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  a {
+    text-align: right;
+    color: $text-color;
+    font-family: $header-font;
+    text-decoration: underline;
+    font-size: 2.5rem;
+    padding: 0 $spacer * 3;
+    display: inline-block;
+  }
 }
 
 html,
@@ -40,30 +74,98 @@ body,
 
 .hero {
   padding: 2rem;
-  width: calc(100% - 4rem);
+  padding-left: 4rem;
+  width: calc(100% - 6rem);
   height: calc(100% - 4rem);
   display: flex;
+  flex-direction: column;
   position: relative;
-  h1 {
+  h1,
+  h2 {
     margin-top: 0px;
+    br {
+      display: none;
+    }
   }
-  &:not(.first) {
-    h1,
-    h2 {
-      color: $brand-color-light;
+  img {
+    margin-top: $spacer * 2;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0;
+    margin-right: $spacer * 2;
+    transform: scale(0);
+    animation: small-to-big 1s 2.5s forwards ease-in-out;
+  }
+  @keyframes small-to-big {
+    0% {
+      transform: scale(0.2);
+      opacity: 0.2;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
   }
 }
 
-.hero > .arrow {
-  position: absolute;
+.hero.first {
+  flex-wrap: wrap;
+  .intro {
+    display: flex;
+  }
+}
+
+.arrow.directionist {
+  position: fixed;
   right: 2rem;
+  transition: all 0.25s;
   will-change: transform;
-  transition: 0.25s;
+  width: 100px;
+  height: 100px;
+
+  &.light {
+    display: none;
+  }
 
   &:hover {
     transform: scale(1.04);
-    transition: 0.25s;
+    transition: all 0.25s;
     cursor: pointer;
+  }
+}
+
+a[data-href*='#'] {
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    color: lighten($text-color, 20%);
+    transform: translateX(5px);
+  }
+}
+
+.intro-text {
+  font-size: 1.75rem;
+}
+
+.full-width {
+  .arrow.directionist {
+    display: none;
+    &.light {
+      display: block;
+    }
+  }
+}
+
+.hero .project {
+  max-width: calc(65% - 1rem);
+}
+
+a {
+  color: $text-color;
+  font-family: $text-font;
+  &:hover {
+    color: lighten($text-color, 50%);
   }
 }

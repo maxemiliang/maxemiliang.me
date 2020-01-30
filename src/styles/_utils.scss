@@ -1,0 +1,37 @@
+.roboto {
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.spacer {
+  padding: $spacer;
+  &-y {
+    padding: $spacer 0;
+  }
+  &-x {
+    padding: 0 $spacer;
+  }
+}
+
+.expanding {
+  p,
+  span,
+  p span,
+  h2,
+  h3,
+  li,
+  a:not(.nav-link) {
+    transition: 0.25s all;
+    color: $brand-color-light;
+  }
+  a:not(.nav-link):hover {
+    color: lighten($brand-color-light, 50%);
+  }
+}
