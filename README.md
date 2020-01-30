@@ -1,4 +1,4 @@
-# My portfolio
+# My portfolio 👓
 
 This is my portfolio made in pure js and css.
 
