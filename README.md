@@ -1,7 +1,5 @@
 # My portfolio
 
-Empty project.
-
 ## Building and running on localhost
 
 First install dependencies:
@@ -20,10 +18,4 @@ To create a production build:
 
 ```sh
 npm run build-prod
-```
-
-## Running
-
-```sh
-node dist/bundle.js
 ```

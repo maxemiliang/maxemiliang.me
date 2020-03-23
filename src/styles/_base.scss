@@ -169,3 +169,18 @@ a {
     color: lighten($text-color, 50%);
   }
 }
+
+.external-links {
+  padding-right: 1rem;
+}
+
+.read-more {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  * {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+}

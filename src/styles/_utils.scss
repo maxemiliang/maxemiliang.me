@@ -35,3 +35,22 @@
     color: lighten($brand-color-light, 50%);
   }
 }
+
+a.light-btn.hover {
+  text-decoration: none;
+  border: 2px solid $brand-color-light;
+  padding: 1rem 2rem;
+  &:hover {
+    border: 2px solid #fff;
+    background-color: #fff;
+    color: $text-color;
+  }
+}
+
+.text-larger {
+  font-size: 1.3rem;
+}
+
+.no-margin-top {
+  margin-top: 0rem;
+}
