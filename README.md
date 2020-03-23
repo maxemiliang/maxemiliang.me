@@ -1,4 +1,8 @@
-# My portfolio
+# My portfolio 👓
+
+This is my portfolio made in pure js and css.
+
+Local deving and building: Parcel 📦
 
 ## Building and running on localhost
 
