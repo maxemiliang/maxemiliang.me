@@ -13,11 +13,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svg-sprite": "^1.4.1",
     "parcel-plugin-sw-precache": "^1.1.1",
-    "sass": "^1.25.0"
+    "sass": "^1.26.3"
   }
 }

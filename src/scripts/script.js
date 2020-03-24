@@ -1,5 +1,5 @@
 import register from './register-sw';
-import { isInViewport, smoothScrollLinks } from './utils';
+import { smoothScrollLinks } from './utils';
 
 window.onload = () => {
   window.addEventListener('scroll', animateBG);
