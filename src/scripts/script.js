@@ -1,5 +1,6 @@
 import register from './register-sw';
 import { smoothScrollLinks } from './utils';
+import 'core-js/stable';
 
 window.onload = () => {
   window.addEventListener('scroll', animateBG);

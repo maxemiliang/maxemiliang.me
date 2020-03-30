@@ -7,11 +7,14 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rm dist/bundle.js",
+    "clean": "rimraf dist/",
     "start": "parcel src/index.html",
-    "build-prod": "parcel build src/index.html --public-url ./"
+    "build-prod": "npm run clean && parcel build src/index.html --public-url ./"
   },
-  "dependencies": {},
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "rimraf": "^3.0.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
