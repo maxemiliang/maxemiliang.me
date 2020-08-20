@@ -177,6 +177,9 @@ a {
 .read-more {
   display: flex;
   justify-content: flex-start;
+  @media screen and (min-width: 900px) {
+    max-width: 65%;
+  }
   flex-wrap: wrap;
   margin-top: 3rem;
   * {
