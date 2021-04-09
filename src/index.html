@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="Description" content="Maxemilian Grönbloms personal portfolio site.">
   <link rel="stylesheet" href="styles/style.scss" />
   <script src="scripts/polyfills.js"></script>
   <script src="scripts/script.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lato|Cutive+Mono|Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato:wght@400;700|Cutive+Mono:wght@400;700|Roboto+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:wght@400;700|Cutive+Mono:wght@400;700|Roboto+Mono:wght@400;700&display=swap" />
   <!-- Matomo -->
   <script type="text/javascript">
     var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(["setDoNotTrack", true]);
     _paq.push(["disableCookies"]);
     _paq.push(['trackPageView']);
@@ -41,7 +41,7 @@
     <a class="nav-link" data-href="#contact">contact</a>
   </nav>
   <div class="hero first">
-    <h1>
+    <h1 class="bold">
       Maxemilian <br />
       Grönblom
     </h1>
@@ -70,15 +70,15 @@
     </p>
   </div>
   <div id="work" class="hero">
-    <h2>my work</h2>
+    <h2 class="bold">my work</h2>
     <div class="project">
-      <h3>WeatherDash</h3>
-      <p>Weatherdash consists of three main components and one minor component</p>
+      <h3>weatherdash</h3>
+      <p>weatherdash consists of three main components and one minor component</p>
       <ul>
         <li>- API Server (NodeJS/Express)</li>
-        <li>- Sensor software (NodeMCU/PlatformIO/C++)</li>
+        <li>- sensor software (NodeMCU/PlatformIO/C++)</li>
         <li>- GUI (Java/JavaFX)</li>
-        <li>- Collector-worker (nodeJS)</li>
+        <li>- collector-worker (nodeJS)</li>
       </ul>
       <a class="external-links" rel="noopener" target="_blank" href="https://git.maxemiliang.cloud/groups/prog3">repos
         -></a>
@@ -86,11 +86,11 @@
         -></a>
     </div>
     <div class="project">
-      <h3>MusicSync</h3>
-      <p>MusicSync is a music sharing and listening service built using nodeJS</p>
+      <h3>musicsync</h3>
+      <p>musicsync is a music sharing and listening service built using nodeJS</p>
       <ul>
-        <li>- Frontend: BloomCSS and Handlebars</li>
-        <li>- Backend: nodeJS/Express</li>
+        <li>- frontend: BloomCSS and Handlebars</li>
+        <li>- backend: nodeJS/Express</li>
       </ul>
       <a class="external-links" rel="noopener" target="_blank" href="https://github.com/maxemiliang/musicSync">repos
         -></a>
@@ -105,17 +105,17 @@
         -></a>
     </div>
     <div class="read-more">
-      <a target="_blank" rel="noopener" class="light-btn hover" href="https://github.com/maxemiliang/">all my projects
+      <a target="_blank" rel="noopener" role="button" class="light-btn hover" href="https://github.com/maxemiliang/">all my projects
         here</a>
     </div>
   </div>
   <div id="contact" class="hero">
-    <h2>contact</h2>
+    <h2 class="bold">contact</h2>
     <p class="text-larger">You can contact me either via email <br>or by phone </p>
     <div class="read-more">
-      <a class="light-btn hover" href="mailto:maxemiliang@gmail.com">maxemiliang@gmail.com</a>
-      <a class="light-btn hover" href="tel:+358442924987">+358442924987</a>
-      <a class="light-btn hover" rel="noopener" target="_blank" href="https://resume.gronblom.dev/">my resume</a>
+      <a role="button" class="light-btn hover" href="mailto:maxemiliang@gmail.com">maxemiliang@gmail.com</a>
+      <a role="button" class="light-btn hover" href="tel:+358442924987">+358442924987</a>
+      <a role="button" class="light-btn hover" rel="noopener" target="_blank" href="https://resume.gronblom.dev/">my resume</a>
     </div>
   </div>
   <svg class="arrow directionist">
