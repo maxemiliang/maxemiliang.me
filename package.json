@@ -1,26 +1,28 @@
 {
-  "name": "maxemilian_portfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "clean": "rimraf dist/",
-    "start": "parcel src/index.html",
-    "build-prod": "npm run clean && parcel build src/index.html --public-url ./"
-  },
-  "dependencies": {
-    "rimraf": "^3.0.2"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/preset-env": "^7.11.0",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "parcel-plugin-svg-sprite": "^1.4.1",
-    "parcel-plugin-sw-precache": "^1.1.2",
-    "sass": "^1.26.10"
+    "@astrojs/tailwind": "^0.2.0",
+    "@astrojs/turbolinks": "^0.1.1",
+    "@astrojs/vue": "^0.1.1",
+    "@tailwindcss/typography": "^0.5.2",
+    "astro": "^1.0.0-beta.12",
+    "prettier-plugin-astro": "^0.0.12",
+    "sass": "^1.50.0",
+    "sass-loader": "^12.6.0",
+    "vue": "^3.2.30"
+  },
+  "dependencies": {
+    "@vueuse/components": "^8.2.6",
+    "@vueuse/core": "^8.2.6",
+    "prettier": "^2.6.2",
+    "vite": "^2.9.5"
   }
 }
