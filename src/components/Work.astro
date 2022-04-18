@@ -1,0 +1,92 @@
+---
+import FullWidthSection from "./FullWidthSection.astro";
+---
+<style>
+  .weatherdash ul li::marker {
+    @apply !text-white;
+  }
+  .storedash ul li::marker {
+    @apply !text-slate-700;
+  }
+</style>
+<section id="projects" class="flex flex-col">
+  <h2 class="cont font-semibold font-space text-3xl mb-6">My projects</h2>
+  <FullWidthSection classes="bg-blue-500" prose="prose-invert">
+    <div class="weatherdash grid md:grid-cols-5 gap-4">
+      <div class="md:col-span-3">
+        <h3 class="mt-0">
+          Weatherdash
+          &mdash;
+          <small>
+            <i class="devicon-nodejs-plain"></i>
+            <i class="devicon-express-original"></i>
+            <i class="devicon-java-plain-wordmark"></i>
+          </small>
+        </h3>
+        
+        <p>
+          Weatherdash is a service that can collect, store, and visualize weather data from custom built sensors using the nodeMCU platform.
+          Weatherdash consists of three main components and one minor component
+          <ul class="list-decimal">
+            <li>API Server (NodeJS/Express)</li>
+            <li>Sensor software (NodeMCU/PlatformIO/C++)</li>
+            <li>GUI (Java/JavaFX)</li>
+            <li>collector-worker (nodeJS)</li>
+          </ul>
+        </p>
+        <div class="mt-6">
+          <a href="https://git.maxemiliang.cloud/groups/prog3" target="_blank" rel="noopener noreferrer">
+            <button class="bg-white text-slate-700 px-3 py-2 rounded-md shadow-md font-space transition-colors duration-150 hover:bg-slate-700 hover:text-white">
+              Repositories
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="md:col-span-2 flex justify-center items-center">
+        <img src="/weatherdash.webp" class="max-h-[250px]" alt="">
+      </div>
+    </div>
+  </FullWidthSection>
+  <FullWidthSection classes="bg-green-600" prose="prose-slate">
+    <div class="storedash grid md:grid-cols-5 gap-4">
+      <div class="md:col-span-3">
+        <h3 class="mt-0">
+          StoreDash
+          &mdash;
+          <small>
+            <i class="devicon-kubernetes-plain"></i>
+            <i class="devicon-postgresql-plain"></i>
+            <i class="devicon-elixir-plain"></i>
+            <i class="devicon-qt-original"></i>
+            <i class="devicon-flutter-plain"></i>
+          </small>
+        </h3>
+        <p>
+          StoreDash is group project done for a project course, StoreDash is a service that allows stores to create indoor maps, and then via a client application, provide navigation for customers. 
+          <br>
+          <span class="font-semibold"> It is best described like Google Maps but for stores.</span> 
+          <br>
+          <br> 
+          Due to NDA:s most of the source code is not public.
+          However here are some of the technologies used:
+          <ul class="list-disc">
+            <li>Kubernetes, Postgres, Pulumi</li>
+            <li>Elixir, Plug, Ecto</li>
+            <li>C++, QT</li>
+            <li>Flutter</li>
+          </ul>
+        </p>
+        <div class="mt-6">
+          <a href="https://github.com/storedash-project" target="_blank" rel="noopener noreferrer">
+            <button class="bg-white text-slate-700 px-3 py-2 rounded-md shadow-md font-space transition-colors duration-150 hover:bg-slate-700 hover:text-white">
+              Repositories
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="md:col-span-2 flex items-center justify-center">
+        <img src="/storedash.webp" class="max-h-[250px]" alt="">
+      </div>
+    </div>
+  </FullWidthSection>
+</section>

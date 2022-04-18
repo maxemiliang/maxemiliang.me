@@ -1,0 +1,18 @@
+---
+const { classes, prose } = Astro.props;
+---
+
+<style is:global>
+.full-width-section {
+  @apply px-4 py-10 w-full;
+}
+.full-width-section .section-content {
+  @apply container mx-auto px-4 md:px-2;
+}
+</style>
+
+<div class:list={["full-width-section", classes]}>
+    <div class:list={["section-content prose", prose]}>
+      <slot />
+    </div>
+</div>

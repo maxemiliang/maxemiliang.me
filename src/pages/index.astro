@@ -1,0 +1,32 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Work from "../components/Work.astro";
+import Contact from "../components/Contact.astro";
+---
+
+
+<DefaultLayout>
+  <section class="cont grid gap-8 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center">
+    <div class="image col-span-1 flex items-center justify-center">
+      <img class="rounded-full max-h-[250px]" src="/avatar.webp" alt="A picture of me.">
+    </div>
+    <div class="prose prose-slate col-span-3">
+      <h3 class="font-semibold">
+          Hello There!    
+      </h3> 
+      <p class="text-xl">
+        You appear to have stumbled upon my portfolio.
+        <br>
+        Let me introduce myself:
+        My name is <span class="font-semibold">Maxemilian</span>.
+        <br>
+        I study <span class="font-semibold">Computer Science</span> at
+        <a href="https://abo.fi" target="_blank" rel="noreferer nofollow" class="italic decoration-dotted">Åbo Akademi University</a>
+        I also work as a developer at
+        <a href="https://jco.fi" target="_blank" rel="noreferer nofollow" class="italic decoration-dotted">JCO Digital</a>
+      </p>
+    </div>
+  </section>
+  <Work />
+  <Contact />
+</DefaultLayout>

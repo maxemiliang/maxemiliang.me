@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"]
+    }
+  }
+}
