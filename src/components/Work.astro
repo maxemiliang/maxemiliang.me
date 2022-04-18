@@ -1,5 +1,6 @@
 ---
 import FullWidthSection from "./FullWidthSection.astro";
+import { Picture } from "astro-imagetools/components";
 ---
 <style>
   .weatherdash ul li::marker {
@@ -43,7 +44,14 @@ import FullWidthSection from "./FullWidthSection.astro";
         </div>
       </div>
       <div class="md:col-span-2 flex justify-center items-center">
-        <img src="/weatherdash.webp" class="max-h-[250px]" alt="">
+        <Picture sizes={
+          (breakpoints) => {
+            const maxWidth = breakpoints.at(-1);
+            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+          }
+        }
+        src="/public/weatherdash.webp" 
+        alt="The weatherdash GUI application" />
       </div>
     </div>
   </FullWidthSection>
@@ -85,7 +93,10 @@ import FullWidthSection from "./FullWidthSection.astro";
         </div>
       </div>
       <div class="md:col-span-2 flex items-center justify-center">
-        <img src="/storedash.webp" class="max-h-[250px]" alt="">
+        <Picture 
+          height={250} 
+          src="/public/storedash.webp" 
+          alt="The weatherdash GUI application" />      
       </div>
     </div>
   </FullWidthSection>

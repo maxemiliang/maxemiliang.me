@@ -1,5 +1,5 @@
 <template>
-  <header class="cont flex items-center text-slate-800 mb-8">
+  <header class="cont flex items-center gap-2 text-slate-800 mb-8">
     <a href="/">
       <h1 class="text-3xl font-semibold">Maxemilian Grönblom</h1>
     </a>

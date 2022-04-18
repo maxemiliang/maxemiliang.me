@@ -2,13 +2,27 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Work from "../components/Work.astro";
 import Contact from "../components/Contact.astro";
+import {Picture} from "astro-imagetools/components";
 ---
-
-
+<style is:global>
+  .avatar img {
+    @apply rounded-full;
+  }
+</style>
 <DefaultLayout>
   <section class="cont grid gap-8 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center">
     <div class="image col-span-1 flex items-center justify-center">
-      <img class="rounded-full max-h-[250px]" src="/avatar.webp" alt="A picture of me.">
+      <div class="avatar">
+        <Picture 
+          sizes={
+            (breakpoints) => {
+              const maxWidth = breakpoints.at(-1);
+              return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+            }
+          }
+          src="/public/avatar.webp" 
+          alt="A picture of me." />
+      </div>
     </div>
     <div class="prose prose-slate col-span-3">
       <h3 class="font-semibold">
