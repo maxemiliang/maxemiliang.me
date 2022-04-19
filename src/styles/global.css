@@ -5,3 +5,7 @@ body {
 h1 {
   @apply text-3xl;
 }
+
+.visual #visual {
+  @apply w-[200px] -mt-4 mb-6;
+}

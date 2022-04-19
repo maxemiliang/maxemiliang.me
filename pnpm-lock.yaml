@@ -8,6 +8,7 @@ specifiers:
   '@vueuse/components': ^8.2.6
   '@vueuse/core': ^8.2.6
   astro: ^1.0.0-beta.12
+  astro-head: ^1.0.1
   astro-imagetools: ^0.5.3
   prettier: ^2.6.2
   prettier-plugin-astro: ^0.0.12
@@ -21,6 +22,7 @@ specifiers:
 dependencies:
   '@vueuse/components': 8.2.6_vue@3.2.33
   '@vueuse/core': 8.2.6_vue@3.2.33
+  astro-head: 1.0.1
   astro-imagetools: 0.5.3_astro@1.0.0-beta.12
   prettier: 2.6.2
   tailwindcss: 3.0.24
@@ -1364,6 +1366,16 @@ packages:
     dependencies:
       tslib: 2.3.1
     dev: true
+
+  /astro-analytics/2.1.1:
+    resolution: {integrity: sha512-C1wjZt6w3dYV65+5vovO0nX9Tx/a+JbwMOu8BubNTK6Js0QV+qm1gALocmKyt9OchOGUh7VRkY6cQgVmy+boIw==}
+    dev: false
+
+  /astro-head/1.0.1:
+    resolution: {integrity: sha512-CWgmLJESZDdyYn4zB2tmln++OEZuR6yn3iuenhKgzHSd9MkbGsFVeJ3xXiA6l/H35FHjAW0tK54DKb/C9GkrNA==}
+    dependencies:
+      astro-analytics: 2.1.1
+    dev: false
 
   /astro-imagetools/0.5.3_astro@1.0.0-beta.12:
     resolution: {integrity: sha512-t9RKBB+YTe3xsQU80lx5DvCqhk8TMZ+2Pm2MAtEGCbJtw7DCl5fXor3eMxbX7Cc3zwqI7anY1ZH5yxm1iTHMCg==}

@@ -2,45 +2,74 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Work from "../components/Work.astro";
 import Contact from "../components/Contact.astro";
-import {Picture} from "astro-imagetools/components";
+import { Picture } from "astro-imagetools/components";
 ---
-<style is:global>
-  .avatar img {
-    @apply rounded-full;
-  }
-</style>
+
 <DefaultLayout>
-  <section class="cont grid gap-8 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center">
+  <section
+    class="cont grid gap-8 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center"
+  >
     <div class="image col-span-1 flex items-center justify-center">
       <div class="avatar">
-        <Picture 
-          sizes={
-            (breakpoints) => {
-              const maxWidth = breakpoints.at(-1);
-              return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-            }
-          }
-          src="/public/avatar.webp" 
-          alt="A picture of me." />
+        <Picture
+          sizes={(breakpoints) => {
+            const maxWidth = breakpoints.at(-1);
+            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
+          }}
+          src="/public/assets/avatar.webp"
+          alt="A picture of me."
+        />
       </div>
     </div>
     <div class="prose prose-slate col-span-3">
-      <h3 class="font-semibold">
-          Hello There!    
-      </h3> 
+      <h3 class="font-semibold">Hello There!</h3>
+      <div class="cont px-0 visual hidden">
+        <svg
+          id="visual"
+          class="!w-[130px] !mt-2"
+          viewBox="0 0 120 50"
+          width="120"
+          height="50"
+          ><path
+            d="M0 39L1.8 36.5C3.7 34 7.3 29 11 28.3C14.7 27.7 18.3 31.3 22 33.8C25.7 36.3 29.3 37.7 33 37.3C36.7 37 40.3 35 44 32.5C47.7 30 51.3 27 54.8 22.8C58.3 18.7 61.7 13.3 65.2 16.2C68.7 19 72.3 30 76 34C79.7 38 83.3 35 87 31.5C90.7 28 94.3 24 98 20.5C101.7 17 105.3 14 109 14.2C112.7 14.3 116.3 17.7 118.2 19.3L120 21"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="miter"
+            style="transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s;"
+            stroke="#3b82f6"
+            stroke-width="4"></path></svg
+        >
+      </div>
       <p class="text-xl">
         You appear to have stumbled upon my portfolio.
-        <br>
-        Let me introduce myself:
-        My name is <span class="font-semibold">Maxemilian</span>.
-        <br>
+        <br />
+        Let me introduce myself: My name is <span class="font-semibold"
+          >Maxemilian</span
+        >.
+        <br />
         I study <span class="font-semibold">Computer Science</span> at
-        <a href="https://abo.fi" target="_blank" rel="noreferer nofollow" class="italic decoration-dotted">Åbo Akademi University</a>
+        <a
+          href="https://abo.fi"
+          target="_blank"
+          rel="noreferer nofollow"
+          class="italic decoration-dotted">Åbo Akademi University</a
+        >
         I also work as a developer at
-        <a href="https://jco.fi" target="_blank" rel="noreferer nofollow" class="italic decoration-dotted">JCO Digital</a>
+        <a
+          href="https://jco.fi"
+          target="_blank"
+          rel="noreferer nofollow"
+          class="italic decoration-dotted">JCO Digital</a
+        >
       </p>
     </div>
   </section>
   <Work />
   <Contact />
 </DefaultLayout>
+
+<style is:global>
+  .avatar img {
+    @apply rounded-full;
+  }
+</style>

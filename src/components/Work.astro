@@ -1,5 +1,6 @@
 ---
 import FullWidthSection from "./FullWidthSection.astro";
+import Button from "./Button.astro";
 import { Picture } from "astro-imagetools/components";
 ---
 <style>
@@ -7,12 +8,15 @@ import { Picture } from "astro-imagetools/components";
     @apply !text-white;
   }
   .storedash ul li::marker {
-    @apply !text-slate-700;
+    @apply !text-white;
   }
 </style>
-<section id="projects" class="flex flex-col">
-  <h2 class="cont font-semibold font-space text-3xl mb-6">My projects</h2>
-  <FullWidthSection classes="bg-blue-500" prose="prose-invert">
+<section id="projects" class="flex flex-col relative">
+  <h2 class="cont font-semibold font-space text-3xl mb-8">My projects</h2>
+  <div class="cont visual">
+    <svg id="visual" viewBox="0 0 190 50" width="190" height="50"><path d="M0 32L2.8 32.3C5.7 32.7 11.3 33.3 17.2 31.2C23 29 29 24 34.8 21.8C40.7 19.7 46.3 20.3 52 23.3C57.7 26.3 63.3 31.7 69 32.8C74.7 34 80.3 31 86.2 28.7C92 26.3 98 24.7 103.8 26.8C109.7 29 115.3 35 121 34.2C126.7 33.3 132.3 25.7 138 22.2C143.7 18.7 149.3 19.3 155.2 21C161 22.7 167 25.3 172.8 24.2C178.7 23 184.3 18 187.2 15.5L190 13" fill="none" stroke-linecap="round" stroke-linejoin="miter" style="transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s;" stroke="#3b82f6" stroke-width="4"></path></svg>
+  </div>
+  <FullWidthSection classes="bg-blue-500" prose="prose-invert !text-white">
     <div class="weatherdash grid md:grid-cols-5 gap-4">
       <div class="md:col-span-3">
         <h3 class="mt-0">
@@ -37,9 +41,9 @@ import { Picture } from "astro-imagetools/components";
         </p>
         <div class="mt-6">
           <a href="https://git.maxemiliang.cloud/groups/prog3" target="_blank" rel="noopener noreferrer">
-            <button class="bg-white text-slate-700 px-3 py-2 rounded-md shadow-md font-space transition-colors duration-150 hover:bg-slate-700 hover:text-white">
+            <Button>
               Repositories
-            </button>
+            </Button>
           </a>
         </div>
       </div>
@@ -50,12 +54,12 @@ import { Picture } from "astro-imagetools/components";
             return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
           }
         }
-        src="/public/weatherdash.webp" 
+        src="/public/assets/weatherdash.webp" 
         alt="The weatherdash GUI application" />
       </div>
     </div>
   </FullWidthSection>
-  <FullWidthSection classes="bg-green-500" prose="prose-slate">
+  <FullWidthSection classes="bg-green-600" prose="prose-invert !text-white">
     <div class="storedash grid md:grid-cols-5 gap-4">
       <div class="md:col-span-3">
         <h3 class="mt-0">
@@ -75,7 +79,7 @@ import { Picture } from "astro-imagetools/components";
           <span class="font-semibold"> It is best described like Google Maps but for stores.</span> 
           <br>
           <br> 
-          Due to NDA:s most of the source code is not public.
+          Unfortunately, most of the source code is not public.
           However here are some of the technologies used:
           <ul class="list-disc">
             <li>Kubernetes, Postgres, Pulumi</li>
@@ -86,16 +90,16 @@ import { Picture } from "astro-imagetools/components";
         </p>
         <div class="mt-6">
           <a href="https://github.com/storedash-project" target="_blank" rel="noopener noreferrer">
-            <button class="bg-white text-slate-700 px-3 py-2 rounded-md shadow-md font-space transition-colors duration-150 hover:bg-slate-700 hover:text-white">
+            <Button>
               Repositories
-            </button>
+            </Button>
           </a>
         </div>
       </div>
       <div class="md:col-span-2 flex items-center justify-center">
         <Picture 
           height={250} 
-          src="/public/storedash.webp" 
+          src="/public/assets/storedash.webp" 
           alt="The weatherdash GUI application" />      
       </div>
     </div>
