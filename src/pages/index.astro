@@ -7,7 +7,7 @@ import { Picture } from "astro-imagetools/components";
 
 <DefaultLayout>
   <section
-    class="cont grid gap-12 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center"
+    class="cont grid md:gap-12 gap-y-8 md:gap-y-0 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center"
   >
     <div class="image col-span-1 flex items-center justify-center">
       <div class="avatar">
@@ -16,6 +16,7 @@ import { Picture } from "astro-imagetools/components";
             const maxWidth = breakpoints.at(-1);
             return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
           }}
+          height={300}
           src="/public/assets/avatar.webp"
           alt="A picture of me."
           decoding="sync"
