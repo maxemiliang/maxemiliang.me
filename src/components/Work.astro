@@ -55,6 +55,7 @@ import { Picture } from "astro-imagetools/components";
             return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
           }
         }
+        placeholder="none"
         height={300}
         src="/public/assets/weatherdash.webp" 
         alt="The weatherdash GUI application" />
@@ -101,7 +102,8 @@ import { Picture } from "astro-imagetools/components";
       </div>
       <div class="md:col-span-2 flex items-center justify-center">
         <Picture 
-          height={250} 
+          height={250}
+          placeholder="none"
           src="/public/assets/storedash.webp" 
           alt="The weatherdash GUI application" />      
       </div>
