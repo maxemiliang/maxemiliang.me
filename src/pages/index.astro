@@ -3,10 +3,16 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Work from "../components/Work.astro";
 import Contact from "../components/Contact.astro";
 import { Picture } from "astro-imagetools/components";
+import Button from "../components/Button.astro";
+
 ---
+<script>
+  import './../scripts/animations.ts';
+</script>
 
 <DefaultLayout>
   <section
+    id="intro"
     class="cont grid md:gap-12 gap-y-8 md:gap-y-0 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center"
   >
     <div class="image col-span-1 flex items-center justify-center">
@@ -26,7 +32,7 @@ import { Picture } from "astro-imagetools/components";
       </div>
     </div>
     <div class="prose prose-slate col-span-3">
-      <h3 class="font-semibold">Hello There!</h3>
+      <h2 class="font-semibold">Hello There!</h2>
       <div class="cont px-0 visual hidden">
         <svg
           id="visual"
@@ -67,6 +73,14 @@ import { Picture } from "astro-imagetools/components";
           class="italic decoration-dotted hover:decoration-solid">JCO Digital</a
         >
       </p>
+      <a href="#contact" data-no-swup class="no-underline">
+        <Button classes="bg-blue-600 text-white border-blue-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+          Let's talk!
+        </Button>
+      </a>
     </div>
   </section>
   <Work />

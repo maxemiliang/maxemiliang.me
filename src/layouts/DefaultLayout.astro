@@ -66,7 +66,10 @@ const description =
     </style>
   </head>
   <body>
-    <main>
+    <script>
+      import "./../scripts/swup.ts";
+    </script>
+    <main id="swup">
       <NavBar client:only="vue" />
       <article class="article font-rubik">
         <slot />

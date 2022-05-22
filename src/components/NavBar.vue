@@ -11,6 +11,7 @@
           <a
             :href="item.target"
             :class="{ active: location?.href?.includes(item.target) }"
+            data-no-swup
             >{{ item.title }}</a
           >
         </li>
