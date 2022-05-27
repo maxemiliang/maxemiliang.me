@@ -21,4 +21,5 @@ tl.add({
   .add({
     targets: "#intro button",
     opacity: [0, 1],
+    translateY: [10, 0],
   });
