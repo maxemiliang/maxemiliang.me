@@ -8,10 +8,5 @@
     "target": "/#contact",
     "title": "contact",
     "external": false
-  },
-  {
-    "target": "/blog",
-    "title": "blog",
-    "external": false
   }
 ]
