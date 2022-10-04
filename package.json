@@ -27,7 +27,7 @@
     "@vueuse/components": "^9.1.1",
     "@vueuse/core": "^9.1.1",
     "animejs": "^3.2.1",
-    "astro-imagetools": "^0.6.10",
+    "astro-imagetools": "^0.6.11",
     "date-fns": "^2.29.2",
     "prettier": "^2.7.1",
     "sanity-blocks-vue-component": "^1.0.1",

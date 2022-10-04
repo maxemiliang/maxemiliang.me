@@ -13,7 +13,7 @@ specifiers:
   '@vueuse/core': ^9.1.1
   animejs: ^3.2.1
   astro: ^1.1.2
-  astro-imagetools: ^0.6.10
+  astro-imagetools: ^0.6.11
   date-fns: ^2.29.2
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.3
@@ -35,7 +35,7 @@ dependencies:
   '@vueuse/components': 9.1.1_vue@3.2.38
   '@vueuse/core': 9.1.1_vue@3.2.38
   animejs: 3.2.1
-  astro-imagetools: 0.6.10_astro@1.1.2
+  astro-imagetools: 0.6.11_astro@1.1.2
   date-fns: 2.29.2
   prettier: 2.7.1
   sanity-blocks-vue-component: 1.0.1
@@ -1526,8 +1526,8 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /astro-imagetools/0.6.10_astro@1.1.2:
-    resolution: {integrity: sha512-b3+vCkud6HeWe3brUI7Rq/RXUPOtuv3GV/ENhd1+4mflISWgCWAEIFSTr+56R6/LUpMdh+ZlLjOQaCG5Ig1v7g==}
+  /astro-imagetools/0.6.11_astro@1.1.2:
+    resolution: {integrity: sha512-ItRT1RwvWrBwvh7MmQ5Ue38D8/dm55Im6LXSGmwQtjWhnZU3wV8AvRGJ1G6uKIhsu2lkiIcombkjKGZnbVDMtQ==}
     engines: {node: ^14.15.0 || >=16.0.0}
     peerDependencies:
       astro: '>=0.26 || >=1.0.0-beta'
