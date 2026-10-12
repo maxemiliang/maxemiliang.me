@@ -1,45 +1,38 @@
-# Welcome to [Astro](https://astro.build)
+# gronblom.dev
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/starter)
+Personal portfolio site, built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- **Astro 7**: static site generation, `astro:assets` for responsive AVIF/WebP images
+- **Tailwind CSS 4** via `@tailwindcss/vite`, plus `@tailwindcss/typography`
+- **Fontsource**: self-hosted Rubik and Space Mono fonts
+- **Devicon**: tech icons, inlined as SVG components
+- **Jampack**: post-build optimisation of `dist/`
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```
 /
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
+├── public/          # Static files copied as-is (favicons, robots.txt, …)
 ├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── assets/      # Images processed by astro:assets
+│   ├── components/  # Astro components
+│   ├── layouts/     # Page layout and <head>
+│   ├── pages/       # Routes (index.astro)
+│   └── styles/      # global.css (Tailwind entry point and theme)
+└── astro.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+Requires Node.js 22.12 or newer (see `.node-version`).
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
-
-
+| `npm install`     | Install dependencies                         |
+| `npm run dev`     | Start the dev server at `localhost:4321`     |
+| `npm run build`   | Build to `./dist/` and optimise with Jampack |
+| `npm run preview` | Preview the production build locally         |
+| `npm run check`   | Type-check `.astro` and TypeScript files     |
+| `npm run format`  | Format the codebase with Prettier            |

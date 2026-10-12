@@ -1,7 +1,7 @@
 ---
 import Head from "./Head.astro";
+import NavBar from "../components/NavBar.astro";
 import "../styles/global.css";
-import NavBar from "../components/NavBar.vue";
 
 const title = "Maxemilian Grönbloms space";
 const description =
@@ -11,66 +11,10 @@ const description =
 <html lang="en">
   <head>
     <Head {title} {description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
-    <link
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-      />
-    </noscript>
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <style is:global>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        @apply !px-0 py-6;
-      }
-      pre {
-        padding: 1rem;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        @apply font-space;
-      }
-      section {
-        @apply py-10;
-      }
-      .cont {
-        @apply container mx-auto px-6 md:px-4;
-      }
-    </style>
   </head>
   <body>
-    <script>
-      import "./../scripts/swup.ts";
-    </script>
-    <main id="swup">
-      <NavBar client:only="vue" />
+    <main>
+      <NavBar />
       <article class="article font-rubik">
         <slot />
       </article>

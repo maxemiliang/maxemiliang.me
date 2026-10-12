@@ -1,0 +1,41 @@
+---
+import navItems from "../nav.json";
+---
+
+<header class="cont mb-8 flex items-center gap-2 text-slate-800">
+  <a href="/">
+    <h1 class="text-3xl font-semibold text-[#0f172a]">Maxemilian Grönblom</h1>
+  </a>
+  <nav class="ml-auto">
+    <ul class="flex flex-col gap-2 text-lg text-[#334155] sm:flex-row sm:gap-4 sm:text-base">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.target} data-nav-link>
+            {item.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const links = document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]");
+
+  function markActive() {
+    for (const link of links) {
+      link.classList.toggle("active", location.href.includes(link.href));
+    }
+  }
+
+  markActive();
+  window.addEventListener("hashchange", markActive);
+</script>
+
+<style>
+  @reference "../styles/global.css";
+
+  a.active {
+    @apply font-bold underline underline-offset-4;
+  }
+</style>

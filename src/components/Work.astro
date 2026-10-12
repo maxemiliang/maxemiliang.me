@@ -1,36 +1,71 @@
 ---
 import FullWidthSection from "./FullWidthSection.astro";
 import Button from "./Button.astro";
-import { Picture } from "astro-imagetools/components";
+import { Picture } from "astro:assets";
+import weatherdash from "../assets/weatherdash.webp";
+import storedash from "../assets/storedash.webp";
+import NodejsIcon from "devicon/icons/nodejs/nodejs-plain.svg";
+import ExpressIcon from "devicon/icons/express/express-original.svg";
+import JavaIcon from "devicon/icons/java/java-plain-wordmark.svg";
+import KubernetesIcon from "devicon/icons/kubernetes/kubernetes-plain.svg";
+import PostgresqlIcon from "devicon/icons/postgresql/postgresql-plain.svg";
+import ElixirIcon from "devicon/icons/elixir/elixir-plain.svg";
+import QtIcon from "devicon/icons/qt/qt-original.svg";
+import FlutterIcon from "devicon/icons/flutter/flutter-plain.svg";
 ---
+
 <style>
+  @reference "../styles/global.css";
+
   .weatherdash ul li::marker {
-    @apply !text-white;
+    @apply text-white!;
   }
   .storedash ul li::marker {
-    @apply !text-white;
+    @apply text-white!;
+  }
+  :global(.tech-icon) {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-inline-end: 0.25em;
+    vertical-align: -0.125em;
+  }
+  :global(.tech-icon *) {
+    fill: currentColor;
   }
 </style>
 <section id="projects" class="flex flex-col relative">
-  <h2 class="cont font-semibold font-space text-3xl text-[#0f172a] mb-8">My projects</h2>
+  <h2 class="cont font-semibold font-space text-3xl text-[#0f172a] mb-8">
+    My projects
+  </h2>
   <div class="cont visual">
-    <svg id="visual" viewBox="0 0 190 50" width="190" height="50"><path d="M0 32L2.8 32.3C5.7 32.7 11.3 33.3 17.2 31.2C23 29 29 24 34.8 21.8C40.7 19.7 46.3 20.3 52 23.3C57.7 26.3 63.3 31.7 69 32.8C74.7 34 80.3 31 86.2 28.7C92 26.3 98 24.7 103.8 26.8C109.7 29 115.3 35 121 34.2C126.7 33.3 132.3 25.7 138 22.2C143.7 18.7 149.3 19.3 155.2 21C161 22.7 167 25.3 172.8 24.2C178.7 23 184.3 18 187.2 15.5L190 13" fill="none" stroke-linecap="round" stroke-linejoin="miter" style="transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s;" stroke="#2563eb" stroke-width="4"></path></svg>
+    <svg id="visual" viewBox="0 0 190 50" width="190" height="50">
+      <path
+        d="M0 32L2.8 32.3C5.7 32.7 11.3 33.3 17.2 31.2C23 29 29 24 34.8 21.8C40.7 19.7 46.3 20.3 52 23.3C57.7 26.3 63.3 31.7 69 32.8C74.7 34 80.3 31 86.2 28.7C92 26.3 98 24.7 103.8 26.8C109.7 29 115.3 35 121 34.2C126.7 33.3 132.3 25.7 138 22.2C143.7 18.7 149.3 19.3 155.2 21C161 22.7 167 25.3 172.8 24.2C178.7 23 184.3 18 187.2 15.5L190 13"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="miter"
+        style="transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s;"
+        stroke="#2563eb"
+        stroke-width="4"
+      ></path>
+    </svg>
   </div>
-  <FullWidthSection classes="bg-blue-600" prose="prose-invert !text-white">
+  <FullWidthSection classes="bg-blue-600" prose="prose-invert text-white!">
     <div class="weatherdash grid md:grid-cols-5 gap-4">
       <div class="md:col-span-3">
         <h3 class="mt-0">
-          Weatherdash
-          &mdash;
+          Weatherdash &mdash;
           <small>
-            <i class="devicon-nodejs-plain"></i>
-            <i class="devicon-express-original"></i>
-            <i class="devicon-java-plain-wordmark"></i>
+            <NodejsIcon class="tech-icon" aria-label="Node.js" role="img" />
+            <ExpressIcon class="tech-icon" aria-label="Express" role="img" />
+            <JavaIcon class="tech-icon" aria-label="Java" role="img" />
           </small>
         </h3>
-        
+
         <p>
-          Weatherdash is a service that can collect, store, and visualize weather data from custom built sensors using the nodeMCU platform.
+          Weatherdash is a service that can collect, store, and visualize
+          weather data from custom built sensors using the nodeMCU platform.
           Weatherdash consists of three main components and one minor component
           <ul class="list-decimal">
             <li>API Server (NodeJS/Express)</li>
@@ -40,10 +75,26 @@ import { Picture } from "astro-imagetools/components";
           </ul>
         </p>
         <div class="mt-6">
-          <a href="https://git.maxemiliang.cloud/groups/prog3" class="hover:no-underline" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://git.maxemiliang.cloud/groups/prog3"
+            class="hover:no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
               Repositories
             </Button>
@@ -51,41 +102,49 @@ import { Picture } from "astro-imagetools/components";
         </div>
       </div>
       <div class="md:col-span-2 flex justify-center items-center">
-        <Picture sizes={
-          (breakpoints) => {
-            const maxWidth = breakpoints.at(-1);
-            return `(min-width: ${maxWidth}px) ${maxWidth}px, 100vw`;
-          }
-        }
-        placeholder="none"
-        height={300}
-        src="/public/assets/weatherdash.webp" 
-        alt="The weatherdash GUI application" />
+        <Picture
+          src={weatherdash}
+          height={300}
+          formats={["avif", "webp"]}
+          alt="The weatherdash GUI application"
+        />
       </div>
     </div>
   </FullWidthSection>
-  <FullWidthSection classes="bg-green-600" prose="prose-invert !text-white">
+  <FullWidthSection classes="bg-green-600" prose="prose-invert text-white!">
     <div class="storedash grid md:grid-cols-5 gap-4">
       <div class="md:col-span-3">
         <h3 class="mt-0">
-          StoreDash
-          &mdash;
+          StoreDash &mdash;
           <small>
-            <i class="devicon-kubernetes-plain"></i>
-            <i class="devicon-postgresql-plain"></i>
-            <i class="devicon-elixir-plain"></i>
-            <i class="devicon-qt-original"></i>
-            <i class="devicon-flutter-plain"></i>
+            <KubernetesIcon
+              class="tech-icon"
+              aria-label="Kubernetes"
+              role="img"
+            />
+            <PostgresqlIcon
+              class="tech-icon"
+              aria-label="PostgreSQL"
+              role="img"
+            />
+            <ElixirIcon class="tech-icon" aria-label="Elixir" role="img" />
+            <QtIcon class="tech-icon" aria-label="Qt" role="img" />
+            <FlutterIcon class="tech-icon" aria-label="Flutter" role="img" />
           </small>
         </h3>
         <p>
-          StoreDash is group project done for a project course, StoreDash is a service that allows stores to create indoor maps, and then via a client application, provide navigation for customers. 
-          <br>
-          <span class="font-semibold"> It is best described like Google Maps but for stores.</span> 
-          <br>
-          <br> 
-          Unfortunately, most of the source code is not public.
-          However here are some of the technologies used:
+          StoreDash is group project done for a project course, StoreDash is a
+          service that allows stores to create indoor maps, and then via a
+          client application, provide navigation for customers.
+          <br />
+          <span class="font-semibold">
+            {" "}
+            It is best described like Google Maps but for stores.
+          </span>
+          <br />
+          <br />
+          Unfortunately, most of the source code is not public. However here are
+          some of the technologies used:
           <ul class="list-disc">
             <li>Kubernetes, Postgres, Pulumi</li>
             <li>Elixir, Plug, Ecto</li>
@@ -94,10 +153,26 @@ import { Picture } from "astro-imagetools/components";
           </ul>
         </p>
         <div class="mt-6">
-          <a href="https://github.com/storedash-project" class="hover:no-underline" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/storedash-project"
+            class="hover:no-underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
               </svg>
               Repositories
             </Button>
@@ -105,11 +180,12 @@ import { Picture } from "astro-imagetools/components";
         </div>
       </div>
       <div class="md:col-span-2 flex items-center justify-center">
-        <Picture 
+        <Picture
+          src={storedash}
           height={250}
-          placeholder="none"
-          src="/public/assets/storedash.webp" 
-          alt="The weatherdash GUI application" />      
+          formats={["avif", "webp"]}
+          alt="The StoreDash application"
+        />
       </div>
     </div>
   </FullWidthSection>

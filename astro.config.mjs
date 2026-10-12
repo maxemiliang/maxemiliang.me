@@ -1,10 +1,14 @@
+// @ts-check
 import { defineConfig } from "astro/config";
-import vue from "@astrojs/vue";
-import tailwind from "@astrojs/tailwind";
-import { astroImageTools }  from "astro-imagetools";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [vue(), tailwind(), astroImageTools],
   site: "https://gronblom.dev",
+  // Lossless HTML whitespace handling (Astro 7 defaults to JSX rules, which
+  // drop the spaces between inline text and links).
+  compressHTML: true,
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

@@ -1,18 +1,25 @@
 ---
+interface Props {
+  classes?: string;
+  prose?: string;
+}
+
 const { classes, prose } = Astro.props;
 ---
 
 <style is:global>
-.full-width-section {
-  @apply px-4 py-10 w-full;
-}
-.full-width-section .section-content {
-  @apply container mx-auto px-6 md:px-4;
-}
+  @reference "../styles/global.css";
+
+  .full-width-section {
+    @apply w-full px-4 py-10;
+  }
+  .full-width-section .section-content {
+    @apply container mx-auto px-6 md:px-4;
+  }
 </style>
 
 <div class:list={["full-width-section", classes]}>
-    <div class:list={["section-content prose", prose]}>
-      <slot />
-    </div>
+  <div class:list={["section-content prose", prose]}>
+    <slot />
+  </div>
 </div>
