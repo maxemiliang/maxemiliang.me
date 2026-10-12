@@ -1,0 +1,43 @@
+---
+// Hand-drawn wave used as a divider under headings.
+
+interface Props {
+  variant?: keyof typeof waves;
+  draw?: boolean;
+  class?: string;
+}
+
+const waves = {
+  short: {
+    viewBox: "0 0 120 50",
+    d: "M0 39L1.8 36.5C3.7 34 7.3 29 11 28.3C14.7 27.7 18.3 31.3 22 33.8C25.7 36.3 29.3 37.7 33 37.3C36.7 37 40.3 35 44 32.5C47.7 30 51.3 27 54.8 22.8C58.3 18.7 61.7 13.3 65.2 16.2C68.7 19 72.3 30 76 34C79.7 38 83.3 35 87 31.5C90.7 28 94.3 24 98 20.5C101.7 17 105.3 14 109 14.2C112.7 14.3 116.3 17.7 118.2 19.3L120 21",
+  },
+  projects: {
+    viewBox: "0 0 190 50",
+    d: "M0 32L2.8 32.3C5.7 32.7 11.3 33.3 17.2 31.2C23 29 29 24 34.8 21.8C40.7 19.7 46.3 20.3 52 23.3C57.7 26.3 63.3 31.7 69 32.8C74.7 34 80.3 31 86.2 28.7C92 26.3 98 24.7 103.8 26.8C109.7 29 115.3 35 121 34.2C126.7 33.3 132.3 25.7 138 22.2C143.7 18.7 149.3 19.3 155.2 21C161 22.7 167 25.3 172.8 24.2C178.7 23 184.3 18 187.2 15.5L190 13",
+  },
+  contact: {
+    viewBox: "0 0 190 50",
+    d: "M0 25L2.8 24.8C5.7 24.7 11.3 24.3 17.2 23.3C23 22.3 29 20.7 34.8 18.7C40.7 16.7 46.3 14.3 52 17.5C57.7 20.7 63.3 29.3 69 29.2C74.7 29 80.3 20 86.2 19.3C92 18.7 98 26.3 103.8 28.5C109.7 30.7 115.3 27.3 121 23.5C126.7 19.7 132.3 15.3 138 16.3C143.7 17.3 149.3 23.7 155.2 27.5C161 31.3 167 32.7 172.8 32.8C178.7 33 184.3 32 187.2 31.5L190 31",
+  },
+};
+
+const { variant = "projects", draw = false, class: className } = Astro.props;
+const wave = waves[variant];
+---
+
+<svg
+  class:list={["h-auto text-signal", className]}
+  viewBox={wave.viewBox}
+  aria-hidden="true"
+  data-draw={draw ? "" : undefined}
+>
+  <path
+    d={wave.d}
+    pathLength="1"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="4"
+    stroke-linecap="round"
+  ></path>
+</svg>

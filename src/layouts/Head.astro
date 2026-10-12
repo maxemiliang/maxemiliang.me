@@ -13,6 +13,17 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
+<meta name="color-scheme" content="light dark" />
+<meta
+  name="theme-color"
+  content="#f6f8fb"
+  media="(prefers-color-scheme: light)"
+/>
+<meta
+  name="theme-color"
+  content="#0f1a2e"
+  media="(prefers-color-scheme: dark)"
+/>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

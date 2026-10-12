@@ -2,15 +2,22 @@
 import navItems from "../nav.json";
 ---
 
-<header class="cont mb-8 flex items-center gap-2 text-slate-800">
-  <a href="/">
-    <h1 class="text-3xl font-semibold text-[#0f172a]">Maxemilian Grönblom</h1>
+<header class="cont flex items-center justify-between gap-4 py-6 sm:py-8">
+  <a
+    href="/"
+    class="font-space text-base leading-tight font-bold tracking-tight text-ink sm:text-xl"
+  >
+    Maxemilian Grönblom
   </a>
-  <nav class="ml-auto">
-    <ul class="flex flex-col gap-2 text-lg text-[#334155] sm:flex-row sm:gap-4 sm:text-base">
+  <nav aria-label="Main">
+    <ul class="flex gap-1 font-space text-sm sm:gap-2 sm:text-base">
       {navItems.map((item) => (
         <li>
-          <a href={item.target} data-nav-link>
+          <a
+            href={item.target}
+            data-nav-link
+            class="block rounded-lg px-2 py-1.5 text-ink-muted transition-colors hover:bg-surface hover:text-ink sm:px-3"
+          >
             {item.title}
           </a>
         </li>
@@ -24,7 +31,10 @@ import navItems from "../nav.json";
 
   function markActive() {
     for (const link of links) {
-      link.classList.toggle("active", location.href.includes(link.href));
+      const active = location.href === link.href;
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
     }
   }
 
@@ -36,6 +46,6 @@ import navItems from "../nav.json";
   @reference "../styles/global.css";
 
   a.active {
-    @apply font-bold underline underline-offset-4;
+    @apply bg-surface text-ink shadow-sm ring-1 ring-line;
   }
 </style>

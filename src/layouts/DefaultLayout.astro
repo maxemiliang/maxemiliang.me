@@ -3,9 +3,9 @@ import Head from "./Head.astro";
 import NavBar from "../components/NavBar.astro";
 import "../styles/global.css";
 
-const title = "Maxemilian Grönbloms space";
+const title = "Maxemilian Grönblom";
 const description =
-  "Hello there! My name is Maxemilian Grönblom and I am a enthusiastic web dev from Finland,";
+  "Hello there! I'm Maxemilian Grönblom, an enthusiastic web developer from Finland.";
 ---
 
 <html lang="en">
@@ -13,11 +13,12 @@ const description =
     <Head {title} {description} />
   </head>
   <body>
+    <NavBar />
     <main>
-      <NavBar />
-      <article class="article font-rubik">
-        <slot />
-      </article>
+      <slot />
     </main>
+    <footer class="cont border-t py-8 text-sm text-ink-muted">
+      © {new Date().getFullYear()} Maxemilian Grönblom
+    </footer>
   </body>
 </html>

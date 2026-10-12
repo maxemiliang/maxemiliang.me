@@ -1,12 +1,11 @@
 ---
-import FullWidthSection from "./FullWidthSection.astro";
-import Button from "./Button.astro";
-import { Picture } from "astro:assets";
+import Project from "./Project.astro";
+import Wave from "./Wave.astro";
 import weatherdash from "../assets/weatherdash.webp";
 import storedash from "../assets/storedash.webp";
 import NodejsIcon from "devicon/icons/nodejs/nodejs-plain.svg";
 import ExpressIcon from "devicon/icons/express/express-original.svg";
-import JavaIcon from "devicon/icons/java/java-plain-wordmark.svg";
+import JavaIcon from "devicon/icons/java/java-plain.svg";
 import KubernetesIcon from "devicon/icons/kubernetes/kubernetes-plain.svg";
 import PostgresqlIcon from "devicon/icons/postgresql/postgresql-plain.svg";
 import ElixirIcon from "devicon/icons/elixir/elixir-plain.svg";
@@ -14,179 +13,68 @@ import QtIcon from "devicon/icons/qt/qt-original.svg";
 import FlutterIcon from "devicon/icons/flutter/flutter-plain.svg";
 ---
 
-<style>
-  @reference "../styles/global.css";
+<section id="projects" class="cont py-16 sm:py-24">
+  <h2 class="text-3xl sm:text-4xl">My projects</h2>
+  <Wave variant="projects" class="mt-1 w-48" />
 
-  .weatherdash ul li::marker {
-    @apply text-white!;
-  }
-  .storedash ul li::marker {
-    @apply text-white!;
-  }
-  :global(.tech-icon) {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-inline-end: 0.25em;
-    vertical-align: -0.125em;
-  }
-  :global(.tech-icon *) {
-    fill: currentColor;
-  }
-</style>
-<section id="projects" class="flex flex-col relative">
-  <h2 class="cont font-semibold font-space text-3xl text-[#0f172a] mb-8">
-    My projects
-  </h2>
-  <div class="cont visual">
-    <svg id="visual" viewBox="0 0 190 50" width="190" height="50">
-      <path
-        d="M0 32L2.8 32.3C5.7 32.7 11.3 33.3 17.2 31.2C23 29 29 24 34.8 21.8C40.7 19.7 46.3 20.3 52 23.3C57.7 26.3 63.3 31.7 69 32.8C74.7 34 80.3 31 86.2 28.7C92 26.3 98 24.7 103.8 26.8C109.7 29 115.3 35 121 34.2C126.7 33.3 132.3 25.7 138 22.2C143.7 18.7 149.3 19.3 155.2 21C161 22.7 167 25.3 172.8 24.2C178.7 23 184.3 18 187.2 15.5L190 13"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="miter"
-        style="transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s;"
-        stroke="#2563eb"
-        stroke-width="4"
-      ></path>
-    </svg>
+  <div class="mt-10 grid gap-8">
+    <Project
+      title="Weatherdash"
+      tone="sky"
+      tech={[
+        { name: "Node.js", icon: NodejsIcon },
+        { name: "Express", icon: ExpressIcon },
+        { name: "Java", icon: JavaIcon },
+      ]}
+      image={weatherdash}
+      imageAlt="The Weatherdash GUI application"
+      imageHeight={360}
+      imageFramed
+      repository="https://git.maxemiliang.cloud/groups/prog3"
+    >
+      <p>
+        Weatherdash collects, stores and visualizes weather data from
+        custom-built sensors running on the NodeMCU platform. It consists of
+        three main components and one minor one:
+      </p>
+      <ul>
+        <li>API server (Node.js/Express)</li>
+        <li>Sensor software (NodeMCU/PlatformIO/C++)</li>
+        <li>GUI (Java/JavaFX)</li>
+        <li>Collector worker (Node.js)</li>
+      </ul>
+    </Project>
+
+    <Project
+      title="StoreDash"
+      tone="moss"
+      tech={[
+        { name: "Kubernetes", icon: KubernetesIcon },
+        { name: "PostgreSQL", icon: PostgresqlIcon },
+        { name: "Elixir", icon: ElixirIcon },
+        { name: "Qt", icon: QtIcon },
+        { name: "Flutter", icon: FlutterIcon },
+      ]}
+      image={storedash}
+      imageAlt="The StoreDash mobile app showing an indoor store map"
+      imageHeight={340}
+      repository="https://github.com/storedash-project"
+    >
+      <p>
+        StoreDash is a group project from a project course. It lets stores
+        create indoor maps, which a client app then uses to guide customers
+        around. <strong>Think Google Maps, but for stores.</strong>
+      </p>
+      <p>
+        Most of the source code isn't public, but here are some of the
+        technologies we used:
+      </p>
+      <ul>
+        <li>Kubernetes, Postgres, Pulumi</li>
+        <li>Elixir, Plug, Ecto</li>
+        <li>C++, Qt</li>
+        <li>Flutter</li>
+      </ul>
+    </Project>
   </div>
-  <FullWidthSection classes="bg-blue-600" prose="prose-invert text-white!">
-    <div class="weatherdash grid md:grid-cols-5 gap-4">
-      <div class="md:col-span-3">
-        <h3 class="mt-0">
-          Weatherdash &mdash;
-          <small>
-            <NodejsIcon class="tech-icon" aria-label="Node.js" role="img" />
-            <ExpressIcon class="tech-icon" aria-label="Express" role="img" />
-            <JavaIcon class="tech-icon" aria-label="Java" role="img" />
-          </small>
-        </h3>
-
-        <p>
-          Weatherdash is a service that can collect, store, and visualize
-          weather data from custom built sensors using the nodeMCU platform.
-          Weatherdash consists of three main components and one minor component
-          <ul class="list-decimal">
-            <li>API Server (NodeJS/Express)</li>
-            <li>Sensor software (NodeMCU/PlatformIO/C++)</li>
-            <li>GUI (Java/JavaFX)</li>
-            <li>collector-worker (nodeJS)</li>
-          </ul>
-        </p>
-        <div class="mt-6">
-          <a
-            href="https://git.maxemiliang.cloud/groups/prog3"
-            class="hover:no-underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Repositories
-            </Button>
-          </a>
-        </div>
-      </div>
-      <div class="md:col-span-2 flex justify-center items-center">
-        <Picture
-          src={weatherdash}
-          height={300}
-          formats={["avif", "webp"]}
-          alt="The weatherdash GUI application"
-        />
-      </div>
-    </div>
-  </FullWidthSection>
-  <FullWidthSection classes="bg-green-600" prose="prose-invert text-white!">
-    <div class="storedash grid md:grid-cols-5 gap-4">
-      <div class="md:col-span-3">
-        <h3 class="mt-0">
-          StoreDash &mdash;
-          <small>
-            <KubernetesIcon
-              class="tech-icon"
-              aria-label="Kubernetes"
-              role="img"
-            />
-            <PostgresqlIcon
-              class="tech-icon"
-              aria-label="PostgreSQL"
-              role="img"
-            />
-            <ElixirIcon class="tech-icon" aria-label="Elixir" role="img" />
-            <QtIcon class="tech-icon" aria-label="Qt" role="img" />
-            <FlutterIcon class="tech-icon" aria-label="Flutter" role="img" />
-          </small>
-        </h3>
-        <p>
-          StoreDash is group project done for a project course, StoreDash is a
-          service that allows stores to create indoor maps, and then via a
-          client application, provide navigation for customers.
-          <br />
-          <span class="font-semibold">
-            {" "}
-            It is best described like Google Maps but for stores.
-          </span>
-          <br />
-          <br />
-          Unfortunately, most of the source code is not public. However here are
-          some of the technologies used:
-          <ul class="list-disc">
-            <li>Kubernetes, Postgres, Pulumi</li>
-            <li>Elixir, Plug, Ecto</li>
-            <li>C++, QT</li>
-            <li>Flutter</li>
-          </ul>
-        </p>
-        <div class="mt-6">
-          <a
-            href="https://github.com/storedash-project"
-            class="hover:no-underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              Repositories
-            </Button>
-          </a>
-        </div>
-      </div>
-      <div class="md:col-span-2 flex items-center justify-center">
-        <Picture
-          src={storedash}
-          height={250}
-          formats={["avif", "webp"]}
-          alt="The StoreDash application"
-        />
-      </div>
-    </div>
-  </FullWidthSection>
 </section>

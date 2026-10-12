@@ -1,101 +1,72 @@
 ---
+import { Picture } from "astro:assets";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Work from "../components/Work.astro";
 import Contact from "../components/Contact.astro";
-import { Picture } from "astro:assets";
-import profile from "../assets/profile.webp";
 import Button from "../components/Button.astro";
+import Wave from "../components/Wave.astro";
+import profile from "../assets/profile.webp";
 ---
 
 <DefaultLayout>
   <section
     id="intro"
-    class="cont grid md:gap-12 gap-y-8 md:gap-y-0 md:grid-cols-4 grid-cols-1 grid-flow-row justify-center items-center"
+    class="cont grid items-center gap-10 pt-8 pb-8 sm:pt-16 sm:pb-12 md:grid-cols-[auto_1fr] md:gap-16"
   >
-    <div class="image col-span-1 flex items-center justify-center">
-      <div class="avatar">
-        <Picture
-          src={profile}
-          height={300}
-          formats={["avif", "webp"]}
-          alt="A picture of me."
-          decoding="sync"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
+    <div data-intro-avatar class="relative w-fit">
+      <div
+        class="absolute inset-0 translate-x-3 translate-y-3 rounded-full bg-signal/25"
+        aria-hidden="true"
+      ></div>
+      <Picture
+        src={profile}
+        height={320}
+        formats={["avif", "webp"]}
+        alt="Maxemilian smiling in front of a waterfall"
+        loading="eager"
+        fetchpriority="high"
+        class="relative size-44 rounded-full object-cover ring-4 ring-surface sm:size-56 lg:size-64"
+      />
     </div>
-    <div class="prose prose-slate col-span-3">
-      <h2 class="font-semibold">Hello There!</h2>
-      <div class="cont px-0 visual hidden">
-        <svg
-          id="visual"
-          class="mt-2! w-[130px]!"
-          viewBox="0 0 120 50"
-          width="120"
-          height="50"
-        >
-          <path
-            d="M0 39L1.8 36.5C3.7 34 7.3 29 11 28.3C14.7 27.7 18.3 31.3 22 33.8C25.7 36.3 29.3 37.7 33 37.3C36.7 37 40.3 35 44 32.5C47.7 30 51.3 27 54.8 22.8C58.3 18.7 61.7 13.3 65.2 16.2C68.7 19 72.3 30 76 34C79.7 38 83.3 35 87 31.5C90.7 28 94.3 24 98 20.5C101.7 17 105.3 14 109 14.2C112.7 14.3 116.3 17.7 118.2 19.3L120 21"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="miter"
-            style="transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0s;"
-            stroke="#3b82f6"
-            stroke-width="4"
-          ></path>
-        </svg>
-      </div>
+
+    <div>
+      <h1 data-intro style="--i: 0" class="text-5xl sm:text-6xl lg:text-7xl">
+        Hello there!
+      </h1>
+      <Wave variant="short" draw class="mt-2 w-32 sm:w-40" />
+
       <!-- prettier-ignore -->
-      <p class="text-xl">
-        You appear to have stumbled upon my portfolio.
-        <br />
-        Let me introduce myself: My name is
-        <span class="font-semibold">Maxemilian</span>.
-        <br />I study <span class="font-semibold">Computer Science</span> at
-        <a
-          href="https://abo.fi"
-          target="_blank"
-          rel="noreferrer nofollow"
-          class="italic decoration-dotted hover:decoration-solid"
-        >Åbo Akademi University</a>
-        I also work as a developer at
-        <a
-          href="https://jco.fi"
-          target="_blank"
-          rel="noreferrer nofollow"
-          class="italic decoration-dotted hover:decoration-solid"
-        >JCO Digital</a>
+      <p data-intro style="--i: 1" class="mt-6 max-w-[52ch] text-xl leading-relaxed text-ink-muted sm:text-2xl sm:leading-relaxed">
+        You appear to have stumbled upon my portfolio. My name is
+        <strong class="font-semibold text-ink">Maxemilian</strong>. I study
+        <strong class="font-semibold text-ink">Computer Science</strong> at
+        <a href="https://abo.fi" target="_blank" rel="noreferrer nofollow" class="text-link">Åbo Akademi University</a>
+        and work as a developer at
+        <a href="https://jco.fi" target="_blank" rel="noreferrer nofollow" class="text-link">JCO Digital</a>.
       </p>
-      <a href="#contact" class="no-underline">
-        <Button variant="primary">
+
+      <div data-intro style="--i: 2" class="mt-8 flex flex-wrap gap-3">
+        <Button href="#contact" variant="primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
             stroke-width="2"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-            />
+            ></path>
           </svg>
           Let's talk!
         </Button>
-      </a>
+        <Button href="#projects">See my projects</Button>
+      </div>
     </div>
   </section>
   <Work />
   <Contact />
 </DefaultLayout>
-
-<style is:global>
-  @reference "../styles/global.css";
-
-  .avatar img {
-    @apply rounded-full;
-  }
-</style>

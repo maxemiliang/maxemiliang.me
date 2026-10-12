@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @import "@fontsource-variable/rubik/wght.css";
 @import "@fontsource-variable/rubik/wght-italic.css";
@@ -8,35 +7,81 @@
 @import "@fontsource/space-mono/700.css";
 @import "@fontsource/space-mono/700-italic.css";
 
-@theme {
+/*
+ * Palette. Light values are the defaults; dark values follow the OS setting.
+ * Panel colours stay saturated in both schemes so the projects keep their
+ * blue/green identity.
+ */
+:root {
+  --paper: #f6f8fb;
+  --surface: #ffffff;
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --line: #dbe2ec;
+  --signal: #2563eb;
+  --signal-deep: #1e40af;
+  --moss: #15803d;
+  --moss-deep: #14532d;
+  --sky: #1d4ed8;
+  --sky-deep: #1e3a8a;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1a2e;
+    --surface: #16233b;
+    --ink: #e6ecf5;
+    --ink-muted: #a3b1c6;
+    --line: #26354f;
+    --signal: #6ea0ff;
+    --signal-deep: #2f5fd0;
+    --moss: #17803f;
+    --moss-deep: #0d4524;
+    --sky: #1f4fd6;
+    --sky-deep: #142f80;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
   --font-space: "Space Mono", monospace;
   --font-rubik: "Rubik Variable", sans-serif;
+
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+  --color-signal: var(--signal);
+  --color-signal-deep: var(--signal-deep);
+  --color-moss: var(--moss);
+  --color-moss-deep: var(--moss-deep);
+  --color-sky: var(--sky);
+  --color-sky-deep: var(--sky-deep);
 }
 
 @utility cont {
-  @apply container mx-auto px-6 md:px-4;
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
 }
 
 @layer base {
-  /* Tailwind 4 defaults borders to currentColor; keep the v3 gray default. */
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-line);
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    @apply bg-white px-0 py-6 font-space;
-  }
-
-  h1 {
-    @apply text-3xl;
+    @apply bg-paper font-rubik text-[1.0625rem] leading-relaxed text-ink antialiased sm:text-lg;
   }
 
   h1,
@@ -45,63 +90,68 @@
   h4,
   h5,
   h6 {
-    @apply font-space;
+    @apply font-space font-bold tracking-tight text-balance;
   }
 
-  pre {
-    padding: 1rem;
+  p {
+    text-wrap: pretty;
   }
 
-  section {
-    @apply py-10;
+  ::selection {
+    @apply bg-signal text-white;
   }
 
-  /* Tailwind 4 resets button cursors to default; keep v3 behaviour. */
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-4 outline-signal;
+  }
+
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
 }
 
-.visual #visual {
-  @apply mt-[-1rem] mb-6 w-[200px];
+/* Inline text links: dotted underline that firms up on hover. */
+@utility text-link {
+  @apply font-medium text-ink underline decoration-signal decoration-dotted decoration-2 underline-offset-4 transition-colors hover:decoration-solid;
 }
 
-/* Intro entrance animation (replaces the former anime.js timeline). */
+/*
+ * The one orchestrated moment: on load the intro rises in and the hero wave
+ * draws itself. Everything else on the page stays still.
+ */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes rise-in {
     from {
       opacity: 0;
-      translate: 0 10px;
+      translate: 0 12px;
     }
   }
 
   @keyframes pop-in {
     from {
       opacity: 0;
-      scale: 0.2;
+      scale: 0.85;
     }
   }
 
-  #intro h2,
-  #intro p,
-  #intro button {
-    animation: rise-in 750ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
   }
 
-  #intro h2 {
-    animation-delay: 500ms;
+  [data-intro] {
+    animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 90ms + 150ms);
   }
 
-  #intro p {
-    animation-delay: 600ms;
+  [data-intro-avatar] {
+    animation: pop-in 800ms cubic-bezier(0.34, 1.56, 0.64, 1) 100ms backwards;
   }
 
-  #intro button {
-    animation-delay: 1350ms;
-  }
-
-  #intro picture {
-    animation: pop-in 750ms cubic-bezier(0.34, 1.56, 0.64, 1) 600ms backwards;
+  [data-draw] path {
+    stroke-dasharray: 1;
+    animation: draw 1100ms cubic-bezier(0.65, 0, 0.35, 1) 450ms backwards;
   }
 }
