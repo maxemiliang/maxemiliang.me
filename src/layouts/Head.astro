@@ -13,6 +13,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Lets CSS hold scroll-reveal animations before the first paint. -->
+<script is:inline>
+  document.documentElement.classList.add("js");
+</script>
 <meta name="color-scheme" content="light dark" />
 <meta
   name="theme-color"

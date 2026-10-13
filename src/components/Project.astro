@@ -33,16 +33,21 @@ const tones = {
 ---
 
 <article
+  data-reveal="card"
   class:list={[
-    "grid gap-10 overflow-hidden rounded-[2rem] p-7 text-white sm:p-10 md:grid-cols-5 md:items-center md:gap-12 lg:p-14",
+    "group grid gap-10 overflow-clip rounded-[2rem] p-7 text-white sm:p-10 md:grid-cols-5 md:items-center md:gap-12 lg:p-14",
     tones[tone],
   ]}
 >
   <div class="md:col-span-3">
     <h3 class="text-3xl sm:text-4xl">{title}</h3>
     <ul class="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
-      {tech.map(({ name, icon: Icon }) => (
-        <li class="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-medium ring-1 ring-white/20 ring-inset">
+      {tech.map(({ name, icon: Icon }, i) => (
+        <li
+          data-pop
+          style={`--i: ${i}`}
+          class="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-medium ring-1 ring-white/20 ring-inset"
+        >
           <Icon class="tech-icon size-4" aria-hidden="true" />
           {name}
         </li>
@@ -76,14 +81,15 @@ const tones = {
       </Button>
     </div>
   </div>
-  <div class="flex justify-center md:col-span-2">
+  <div data-parallax class="flex justify-center md:col-span-2">
     <Picture
+      data-slide
       src={image}
       height={imageHeight}
       formats={["avif", "webp"]}
       alt={imageAlt}
       class:list={[
-        "h-auto max-w-full",
+        "h-auto max-w-full transition-[rotate,scale] duration-500 ease-out motion-safe:group-hover:scale-[1.03] motion-safe:group-hover:-rotate-1",
         imageFramed &&
           "rounded-xl shadow-2xl ring-1 shadow-black/30 ring-black/10",
       ]}

@@ -13,9 +13,9 @@ import profile from "../assets/profile.webp";
     id="intro"
     class="cont grid items-center gap-10 pt-8 pb-8 sm:pt-16 sm:pb-12 md:grid-cols-[auto_1fr] md:gap-16"
   >
-    <div data-intro-avatar class="relative w-fit">
+    <div data-intro-avatar class="group relative w-fit">
       <div
-        class="absolute inset-0 translate-x-3 translate-y-3 rounded-full bg-signal/25"
+        class="absolute inset-0 translate-x-3 translate-y-3 rounded-full bg-signal/25 transition-[translate] duration-500 ease-out motion-safe:group-hover:translate-x-5 motion-safe:group-hover:translate-y-5"
         aria-hidden="true"
       ></div>
       <Picture
@@ -25,7 +25,7 @@ import profile from "../assets/profile.webp";
         alt="Maxemilian smiling in front of a waterfall"
         loading="eager"
         fetchpriority="high"
-        class="relative size-44 rounded-full object-cover ring-4 ring-surface sm:size-56 lg:size-64"
+        class="relative size-44 rounded-full object-cover ring-4 ring-surface transition-[rotate,translate] duration-500 ease-out motion-safe:group-hover:-translate-x-1 motion-safe:group-hover:-translate-y-1 motion-safe:group-hover:-rotate-3 sm:size-56 lg:size-64"
       />
     </div>
 

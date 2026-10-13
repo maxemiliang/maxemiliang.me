@@ -14,8 +14,10 @@ import FlutterIcon from "devicon/icons/flutter/flutter-plain.svg";
 ---
 
 <section id="projects" class="cont py-16 sm:py-24">
-  <h2 class="text-3xl sm:text-4xl">My projects</h2>
-  <Wave variant="projects" class="mt-1 w-48" />
+  <div data-reveal>
+    <h2 class="text-3xl sm:text-4xl">My projects</h2>
+    <Wave variant="projects" draw class="mt-1 w-48" />
+  </div>
 
   <div class="mt-10 grid gap-8">
     <Project
@@ -30,7 +32,7 @@ import FlutterIcon from "devicon/icons/flutter/flutter-plain.svg";
       imageAlt="The Weatherdash GUI application"
       imageHeight={360}
       imageFramed
-      repository="https://git.maxemiliang.cloud/groups/prog3"
+      repository="https://github.com/maxemiliang?tab=repositories&q=weatherdash&type=&language=&sort="
     >
       <p>
         Weatherdash collects, stores and visualizes weather data from

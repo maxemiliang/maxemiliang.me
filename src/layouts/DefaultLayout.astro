@@ -20,5 +20,42 @@ const description =
     <footer class="cont border-t py-8 text-sm text-ink-muted">
       © {new Date().getFullYear()} Maxemilian Grönblom
     </footer>
+    <script>
+      // Starts the paused [data-reveal] animations once each element scrolls into
+      // view (see global.css). Elements that appear together are queued so they
+      // cascade top to bottom instead of all starting at once.
+      const STAGGER_MS = 150;
+      const targets = document.querySelectorAll("[data-reveal]");
+      const reveal = (el: Element) => el.setAttribute("data-revealed", "");
+
+      let nextSlot = 0;
+      function queueReveal(el: Element) {
+        const now = performance.now();
+        nextSlot = Math.max(now, nextSlot + STAGGER_MS);
+        setTimeout(() => reveal(el), nextSlot - now);
+      }
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort(
+                (a, b) =>
+                  a.boundingClientRect.top - b.boundingClientRect.top ||
+                  a.boundingClientRect.left - b.boundingClientRect.left,
+              );
+            for (const entry of visible) {
+              observer.unobserve(entry.target);
+              queueReveal(entry.target);
+            }
+          },
+          { rootMargin: "0px 0px -10% 0px" },
+        );
+        for (const target of targets) observer.observe(target);
+      } else {
+        targets.forEach(reveal);
+      }
+    </script>
   </body>
 </html>

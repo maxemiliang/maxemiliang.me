@@ -116,9 +116,34 @@
   @apply font-medium text-ink underline decoration-signal decoration-dotted decoration-2 underline-offset-4 transition-colors hover:decoration-solid;
 }
 
+@theme {
+  --animate-phone-ring: phone-ring 700ms ease-in-out;
+
+  @keyframes phone-ring {
+    15% {
+      rotate: -14deg;
+    }
+    30% {
+      rotate: 12deg;
+    }
+    45% {
+      rotate: -9deg;
+    }
+    60% {
+      rotate: 6deg;
+    }
+    75% {
+      rotate: -3deg;
+    }
+  }
+}
+
 /*
- * The one orchestrated moment: on load the intro rises in and the hero wave
- * draws itself. Everything else on the page stays still.
+ * Motion. On load the intro rises in and the hero wave draws itself. Further
+ * down, anything marked [data-reveal] plays the same kind of entrance once it
+ * scrolls into view: its animations (and its descendants') are held paused
+ * until the observer in DefaultLayout sets [data-revealed]. Without JS the
+ * .js class is never added, so everything simply animates on load.
  */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes rise-in {
@@ -132,6 +157,22 @@
     from {
       opacity: 0;
       scale: 0.85;
+    }
+  }
+
+  @keyframes card-in {
+    from {
+      opacity: 0;
+      translate: 0 48px;
+      scale: 0.96;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      translate: 40px 0;
+      rotate: 4deg;
     }
   }
 
@@ -153,5 +194,52 @@
   [data-draw] path {
     stroke-dasharray: 1;
     animation: draw 1100ms cubic-bezier(0.65, 0, 0.35, 1) 450ms backwards;
+  }
+
+  [data-reveal] {
+    animation: rise-in 800ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+
+  [data-reveal="card"] {
+    animation-name: card-in;
+    animation-duration: 1000ms;
+  }
+
+  [data-reveal] [data-pop] {
+    animation: pop-in 500ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+    animation-delay: calc(var(--i, 0) * 70ms + 350ms);
+  }
+
+  [data-reveal] [data-slide] {
+    animation: slide-in 1100ms cubic-bezier(0.16, 1, 0.3, 1) 250ms backwards;
+  }
+
+  /* Project screenshots drift gently against the scroll where supported. */
+  @supports (animation-timeline: view()) {
+    @media (min-width: 768px) {
+      @keyframes drift {
+        from {
+          translate: 0 28px;
+        }
+        to {
+          translate: 0 -28px;
+        }
+      }
+
+      [data-parallax] {
+        /* Longhands, so the minifier can't fold the timeline into the shorthand. */
+        animation-name: drift;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: view();
+      }
+    }
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .js [data-reveal]:not([data-revealed]),
+  .js [data-reveal]:not([data-revealed]) :not([data-parallax]) {
+    animation-play-state: paused;
   }
 }
